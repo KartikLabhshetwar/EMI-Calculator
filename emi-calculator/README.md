@@ -25,7 +25,7 @@ To install the EMI Calculator, follow these steps:
 
 1. Clone the repository:
    ```
-   git clone https://github.com/your-username/emi-calculator.git
+   git clone https://github.com/KartikLabhshetwar/emi-calculator.git
    ```
 
 2. Navigate to the project directory:
