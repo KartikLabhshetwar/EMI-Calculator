@@ -1,5 +1,5 @@
 import { Card, ListGroup, Row, Col } from 'react-bootstrap';
-import { calculateEMI, calculateTotalInterest, calculatePrepaymentImpact } from '../utils/calculations';
+import { calculateEMI, calculateTotalInterest, calculatePrepaymentImpact } from "../utils/calculations";
 
 const ResultsDisplay = ({ loanAmount, interestRate, loanTenure, prepaymentAmount }) => {
   const emi = calculateEMI(loanAmount, interestRate, loanTenure);
