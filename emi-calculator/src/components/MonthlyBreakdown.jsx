@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Table, Button, Card } from 'react-bootstrap';
-import { generateMonthlyBreakdown } from '../utils/calculations';
+import { generateMonthlyBreakdown } from '../utils/Calculations';
 
 const MonthlyBreakdown = ({ loanAmount, interestRate, loanTenure, prepaymentAmount, isDarkMode }) => {
   const [showAll, setShowAll] = useState(false);
