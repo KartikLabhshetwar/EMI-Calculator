@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { useReactToPrint } from 'react-to-print';
 import InputForm from './InputForm';
@@ -29,7 +29,7 @@ const EMICalculator = () => {
 
   return (
     <Container className="my-5">
-      <Card className="shadow-sm">
+      <Card className={`shadow-sm ${isDarkMode ? 'bg-dark text-white' : ''}`}>
         <Card.Body>
           <div className="d-flex justify-content-between align-items-center mb-4">
             <h1 className="mb-0">EMI Calculator</h1>
@@ -46,17 +46,13 @@ const EMICalculator = () => {
           </div>
           <Row>
             <Col lg={4}>
-              <Card className="mb-4 mb-lg-0">
-                <Card.Body>
-                  <InputForm onSubmit={handleFormSubmit} />
-                </Card.Body>
-              </Card>
+              <InputForm onSubmit={handleFormSubmit} isDarkMode={isDarkMode} />
             </Col>
             <Col lg={8}>
               {calculationData && (
                 <div ref={printRef}>
-                  <ResultsDisplay {...calculationData} />
-                  <MonthlyBreakdown {...calculationData} />
+                  <ResultsDisplay {...calculationData} isDarkMode={isDarkMode} />
+                  <MonthlyBreakdown {...calculationData} isDarkMode={isDarkMode} />
                 </div>
               )}
             </Col>
