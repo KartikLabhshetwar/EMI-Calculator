@@ -1,5 +1,5 @@
 import { Card, ListGroup, Row, Col } from 'react-bootstrap';
-import { calculateEMI, calculateTotalInterest, calculatePrepaymentImpact } from '../utils/Calculations';
+import { calculateEMI, calculateTotalInterest, calculatePrepaymentImpact } from '../utils/calculations';
 
 const ResultsDisplay = ({ loanAmount, interestRate, loanTenure, prepaymentAmount }) => {
   const emi = calculateEMI(loanAmount, interestRate, loanTenure);
@@ -13,10 +13,10 @@ const ResultsDisplay = ({ loanAmount, interestRate, loanTenure, prepaymentAmount
   };
 
   return (
-    <Row className="mt-4">
-      <Col md={6}>
-        <Card>
-          <Card.Header as="h5">Loan Summary</Card.Header>
+    <Row className="mb-4">
+      <Col md={prepaymentAmount > 0 ? 6 : 12}>
+        <Card className="h-100 shadow-sm">
+          <Card.Header as="h5" className="bg-primary text-white">Loan Summary</Card.Header>
           <ListGroup variant="flush">
             <ListGroup.Item>
               <strong>Monthly EMI:</strong> {formatCurrency(emi)}
@@ -32,17 +32,20 @@ const ResultsDisplay = ({ loanAmount, interestRate, loanTenure, prepaymentAmount
       </Col>
       {prepaymentAmount > 0 && (
         <Col md={6}>
-          <Card>
-            <Card.Header as="h5">Prepayment Impact</Card.Header>
+          <Card className="h-100 shadow-sm">
+            <Card.Header as="h5" className="bg-success text-white">Prepayment Impact</Card.Header>
             <ListGroup variant="flush">
               <ListGroup.Item>
-                <strong>New Loan Tenure:</strong> {prepaymentImpact.newTenure} months
+                <strong>Your current EMI:</strong> {formatCurrency(prepaymentImpact.originalEMI)}
               </ListGroup.Item>
               <ListGroup.Item>
-                <strong>Tenure Reduced:</strong> {loanTenure - prepaymentImpact.newTenure} months
+                <strong>EMI reduced by:</strong> {formatCurrency(prepaymentImpact.emiReduction)}
               </ListGroup.Item>
               <ListGroup.Item>
-                <strong>Interest Saved:</strong> {formatCurrency(prepaymentImpact.interestSaved)}
+                <strong>Your new EMI:</strong> {formatCurrency(prepaymentImpact.newEMI)}
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <strong>Your savings on interest:</strong> {formatCurrency(prepaymentImpact.interestSaved)}
               </ListGroup.Item>
             </ListGroup>
           </Card>
