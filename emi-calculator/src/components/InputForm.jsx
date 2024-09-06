@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Form, Button, Col, Row } from 'react-bootstrap';
 
-const InputForm = ({ onSubmit }) => {
+const InputForm = ({ onSubmit, isDarkMode }) => {
   const [formData, setFormData] = useState({
     loanAmount: '',
     interestRate: '',
@@ -96,9 +96,9 @@ const InputForm = ({ onSubmit }) => {
           <Form.Group className="mb-3">
             <Form.Label>Tenure Type</Form.Label>
             <Form.Select
-              name="tenureType"
               value={formData.tenureType}
-              onChange={handleChange}
+              onChange={(e) => setFormData({ ...formData, tenureType: e.target.value })}
+              className={isDarkMode ? 'bg-dark text-white' : ''}
             >
               <option value="months">Months</option>
               <option value="years">Years</option>
@@ -119,7 +119,7 @@ const InputForm = ({ onSubmit }) => {
           {errors.prepaymentAmount}
         </Form.Control.Feedback>
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button variant={isDarkMode ? "outline-light" : "primary"} type="submit">
         Calculate EMI
       </Button>
     </Form>
