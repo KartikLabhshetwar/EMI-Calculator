@@ -1,0 +1,174 @@
+body {
+  background-color: #f8f9fa;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+.card {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode .card {
+  background-color: #444;
+  color: #fff;
+}
+
+.card-header {
+  font-weight: bold;
+}
+
+.dark-mode .card-header {
+  background-color: #555;
+  color: #fff;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.dark-mode .form-control {
+  background-color: #555;
+  color: #fff;
+  border-color: #666;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.table th {
+  background-color: #f8f9fa;
+}
+
+.bg-primary {
+  background-color: #007bff !important;
+}
+
+.bg-success {
+  background-color: #28a745 !important;
+}
+
+.bg-info {
+  background-color: #17a2b8 !important;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark-mode .card {
+  background-color: #444;
+  color: #fff;
+}
+
+.dark-mode .card-header {
+  background-color: #555;
+  color: #fff;
+}
+
+.dark-mode .list-group-item {
+  background-color: #444;
+  color: #fff;
+}
+
+.dark-mode .form-control {
+  background-color: #555;
+  color: #fff;
+  border-color: #666;
+}
+
+.dark-mode .table {
+  color: #fff;
+  background-color: #444;
+}
+
+.dark-mode .table thead th {
+  border-color: #555;
+}
+
+.dark-mode .table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .table td,
+.dark-mode .table th {
+  border-color: #555;
+}
+
+.dark-mode select.form-select {
+  background-color: #555;
+  color: #fff;
+  border-color: #666;
+}
+
+.dark-mode select.form-select option {
+  background-color: #555;
+  color: #fff;
+}
+
+.dark-mode .btn-outline-dark {
+  color: #fff;
+  border-color: #fff;
+}
+
+.dark-mode .btn-outline-dark:hover {
+  color: #333;
+  background-color: #fff;
+}
+
+@media (max-width: 767.98px) {
+  .card {
+    margin-bottom: 1rem;
+  }
+}
+
+@media print {
+  body {
+    background-color: white;
+    color: black;
+  }
+
+  .card {
+    box-shadow: none !important;
+  }
+
+  .no-print {
+    display: none;
+  }
+}
+
+.monthly-breakdown-table.table-dark {
+  color: #fff;
+}
+
+.monthly-breakdown-table.table-dark thead th {
+  background-color: #343a40;
+  color: #fff;
+  border-color: #454d55;
+}
+
+.monthly-breakdown-table.table-dark td {
+  border-color: #454d55;
+}
+
+.monthly-breakdown-table.table-dark tbody tr:nth-of-type(odd) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.monthly-breakdown-table.table-dark tbody tr:nth-of-type(even) {
+  background-color: rgba(255, 255, 255, 0.02);
+}
